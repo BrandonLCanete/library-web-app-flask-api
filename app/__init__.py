@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 from config import Config
-from app.extension import db, migrate
+from app.extension import db, migrate, bcrypt
 from app.models import user_model
 from app.models import book_model
 from app.models import category_model
@@ -19,6 +19,7 @@ def create_app():
     
     db.init_app(app)
     migrate.init_app(app,db)
+    bcrypt.init_app(app)
     
     api = Api(app)
     api.register_blueprint(user_blp)
