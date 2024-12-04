@@ -1,9 +1,11 @@
 alembic==1.14.0
 apispec==6.7.1
+bcrypt==4.2.1
 blinker==1.9.0
 click==8.1.7
 colorama==0.4.6
 Flask==3.1.0
+Flask-Bcrypt==1.0.1
 Flask-Migrate==4.0.7
 flask-smorest==0.45.0
 Flask-SQLAlchemy==3.1.1
