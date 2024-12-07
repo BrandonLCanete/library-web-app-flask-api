@@ -13,7 +13,7 @@ class BookRepository:
         
     @staticmethod
     def get_book_by_uuid(book_uuid):
-        return BookModel.query.filter_by(book_uuid=book_uuid).first()
+        return BookModel.query.filter_by(book_uuid=book_uuid,deleted_at=None).first()
     
     @staticmethod
     def get_all():

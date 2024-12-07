@@ -12,7 +12,7 @@ class CategoryRepository:
         
     @staticmethod
     def get_category_by_uuid(category_id):
-        return CategoryModel.query.filter_by(category_id=category_id).first()
+        return CategoryModel.query.filter_by(category_id=category_id,deleted_at=None).first()
     
     @staticmethod
     def get_all():

@@ -11,7 +11,6 @@ class UserRepository:
         user = UserModel(**data)
         db.session.add(user)
         db.session.commit()
-        return user
     
     @staticmethod
     def get_user_by_id(user_id):
@@ -19,7 +18,7 @@ class UserRepository:
     
     @staticmethod
     def get_user_by_uuid(user_uuid):
-        return UserModel.query.filter_by(user_uuid=user_uuid).first()
+        return UserModel.query.filter_by(user_uuid=user_uuid,deleted_at=None).first()
     
     @staticmethod
     def get_all():

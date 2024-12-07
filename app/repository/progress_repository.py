@@ -12,7 +12,7 @@ class ProgressRepository:
         
     @staticmethod
     def get_progress_by_uuid(progress_id):
-        return ProgressModel.query.filter_by(progress_id=progress_id).first()
+        return ProgressModel.query.filter_by(progress_id=progress_id,deleted_at=None).first()
     
     @staticmethod
     def get_all():
